@@ -13,7 +13,7 @@ export default function Footer() {
                     </div>
                     <div className="text-content flex justify-between">
                         <p className="lorem pt-3 text-white font-open font-normal text-sm opacity-80">
-                            Lorem
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus massa mi, placerat feugiat volutpat vel, ullamcorper non velit.
                         </p>
                         <div className="socials">
                             <div className="social flex items-center justify-between w-[17.5rem]">
