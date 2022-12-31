@@ -1,46 +1,36 @@
-// import MenuIcon from "@mui/icons-material/Menu";
-import { MdMenu } from "react-icons/md";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
+import Image from 'next/image'
+import React from 'react'
 
-import logo from "./assets/logo.png";
-import {useWindowSize,ISize} from "../hooks/useWindowSize";
+import logo from "./assets/logo.png"
 
-export default function Navbar() {    
-	const {width,height} : ISize = useWindowSize()
-
-	return (
-        <>
-            <nav className="bg-white px-3 md:px-36 h-24 w-full flex items-center justify-between">
-                <div className="logo ">
-                    <Image className="w-32 md:w-24" src={logo} alt="Logo" />
-                </div>
-                {width && width < 450 ? (
-                    <>
-                        <div className="iconWrapper border-2 border-gray-200 h-16 w-16 items-center flex justify-center">
-                            <MdMenu className="cursor-pointer text-site-brightBlue text-4xl" />
-                        </div>
-                    </>
-                ) : (
-                    <>
-                        <div className="ul flex items-center justify-between w-[28%]">
-                            <p className="font-inter font-medium text-gray-800">
-                                Overview
-                            </p>
-                            <p className="font-inter font-medium text-gray-800">
-                                Pages
-                            </p>
-                            <p className="font-inter font-medium text-gray-800">
-                                Template
-                            </p>
-                        </div>
-                        <button className="font-inter bg-site-brightBlue px-5 py-3 text-white ">
-                            Contact Us
-                        </button>
-                    </>
-                )}
-            </nav>
-        </>
-    );
+export default function Navbar() {
+  return <>
+	<nav className="navbar-wrapper h-64 w-full border-b-2 border-gray-500 px-52 max-h-20 flex items-center justify-between bg-site-darkBlue">
+		<div className="logoWrapper py-4 w-48">
+			<Image className="object-cover w-full h-full" src={logo} alt="Logo"/>
+		</div>
+		<div className="navLinks flex justify-between items-center w-[50%]  ">
+			<div className="linkWrapper h-20 relative flex items-center">
+				<p className="link cursor-pointer font-open uppercase text-site-lightGreen font-normal text-xs tracking-widest">Home</p>
+				<div className="bottomHighlight  absolute w-full h-1 rounded-full bottom-0 bg-site-lightGreen"></div>
+			</div>
+			<div className="linkWrapper h-20 relative flex items-center">
+				<p className="link cursor-pointer font-open uppercase text-white font-normal text-xs tracking-widest">About</p>
+				{/* <div className="bottomHighlight absolute w-full h-1 rounded-full bottom-0 bg-site-lightGreen"></div> */}
+			</div>
+			<div className="linkWrapper h-20 relative flex items-center">
+				<p className="link cursor-pointer font-open uppercase text-white font-normal text-xs tracking-widest">Services</p>
+				{/* <div className="bottomHighlight absolute w-full h-1 rounded-full bottom-0 bg-site-lightGreen"></div> */}
+			</div>
+			<div className="linkWrapper h-20 relative flex items-center">
+				<p className="link cursor-pointer font-open uppercase text-white font-normal text-xs tracking-widest">Products</p>
+				{/* <div className="bottomHighlight absolute w-full h-1 rounded-full bottom-0 bg-site-lightGreen"></div> */}
+			</div>
+			<div className="linkWrapper h-20 relative flex items-center">
+				<p className="link cursor-pointer font-open uppercase text-white font-normal text-xs tracking-widest">Contact</p>
+				{/* <div className="bottomHighlight absolute w-full h-1 rounded-full bottom-0 bg-site-lightGreen"></div> */}
+			</div>
+		</div>
+	</nav>
+  </>
 }
